@@ -48,7 +48,7 @@ pipeline {
     steps {
         sh '''
         mkdir -p /opt/images
-        docker save -o /opt/images/prod-automation-app-${BUILD_NUMBER}.tar \
+       sudo docker save -o /opt/images/prod-automation-app-${BUILD_NUMBER}.tar \
             prod-automation-app:${BUILD_NUMBER}
         '''
     }
