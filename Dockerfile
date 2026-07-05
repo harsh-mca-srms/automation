@@ -1,4 +1,4 @@
-```dockerfile
+
 FROM nginx:alpine
 
 # Copy static website files
@@ -9,5 +9,4 @@ EXPOSE 80
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
-```
 
