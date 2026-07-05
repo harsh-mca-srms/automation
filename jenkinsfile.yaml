@@ -44,6 +44,15 @@ pipeline {
                 sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
             }
         }
+        stage('Save Docker Image') {
+    steps {
+        sh '''
+        mkdir -p /opt/images
+        docker save -o /opt/images/prod-automation-app-${BUILD_NUMBER}.tar \
+            prod-automation-app:${BUILD_NUMBER}
+        '''
+    }
+}
 
     }
 
